@@ -4,8 +4,8 @@
   "description": "Simple API to fetch NLT Bible readings with in-memory caching",
   "type": "module",
   "scripts": {
-    "start": "bun run src/index.ts",
-    "dev": "bun --watch run src/index.ts"
+    "start": "bun run index.ts",
+    "dev": "bun --watch run index.ts"
   },
   "keywords": ["nlt", "bible", "api", "bun"],
   "license": "MIT",
