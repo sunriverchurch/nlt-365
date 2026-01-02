@@ -19,8 +19,17 @@ if (!API_KEY) {
   process.exit(1);
 }
 
-function getTodayDate(): string {
-  return new Date().toISOString().split("T")[0];
+const DEFAULT_TIMEZONE = "America/Los_Angeles";
+
+function getTodayDate(timezone: string = DEFAULT_TIMEZONE): string {
+  const now = new Date();
+  const formatter = new Intl.DateTimeFormat("en-CA", {
+    timeZone: timezone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+  return formatter.format(now);
 }
 
 async function fetchReading(date: string): Promise<string> {
